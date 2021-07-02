@@ -1,6 +1,7 @@
-FROM nginx:1.21-alpine
+FROM alpine:3.14
 
-RUN curl -O https://raw.githubusercontent.com/abdennour/practical-cloudnative-docker-compose/main/files/archive.tar
-RUN tar xvf archive.tar -C /usr/share/nginx/html
+RUN dd if=/dev/zero of=/tmp/output.dat bs=24M count=1
+RUN cp /tmp/output.dat /opt/final.dat
+RUN rm -f /tmp/output.dat
 
-RUN rm -f archive.tar
+
