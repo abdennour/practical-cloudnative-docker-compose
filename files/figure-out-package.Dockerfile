@@ -1,3 +1,4 @@
-FROM alpine:3.14
 
-RUN apk --no-cache add hashicorp-vault # ?!?
+FROM alpine:3.14
+# ?!?
+RUN apk update && apk --no-cache add vault 
